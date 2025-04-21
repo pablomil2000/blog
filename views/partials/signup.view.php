@@ -12,39 +12,7 @@ $template = new TemplateController();
   <!-- Login form -->
   <form action="" method="post" class="signup-form">
 
-
-    <?php
-    if (isset($status['errors'])) {
-    ?>
-      <div class="alert alert-danger" role="alert">
-        <ul>
-          <?php
-          foreach ($status['errors'] as $key => $value) {
-          ?>
-            <li><?= $value ?></li>
-          <?php
-          }
-          ?>
-        </ul>
-      </div>
-    <?php
-    } elseif (isset($status['success'])) {
-    ?>
-      <div class="alert alert-success" role="alert">
-        <ul>
-          <?php
-          foreach ($status['success'] as $key => $value) {
-          ?>
-            <li><?= $value ?></li>
-          <?php
-          }
-          ?>
-        </ul>
-      </div>
-    <?php
-    }
-    ?>
-
+    <?php include_once './views/components/showStatus.php' ?>
 
     <div class="form-group">
       <label for="username">Username</label>

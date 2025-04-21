@@ -26,7 +26,9 @@
       $template = new TemplateController();
       $template->whitelist(
         'signup',
-        'login'
+        'login',
+        'logout',
+        'newPost'
       );
       ?>
     </div>

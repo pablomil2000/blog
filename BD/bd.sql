@@ -30,12 +30,18 @@ CREATE TABLE IF NOT EXISTS Users (
 
 CREATE TABLE IF NOT EXISTS Posts (
   Id INT AUTO_INCREMENT,
+  Name VARCHAR(100),
   Creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   Publish_at DATETIME,
-  AuthorId INT,
+  Author_id INT,
   Content TEXT,
   Image VARCHAR(250),
   PRIMARY KEY (Id),
-  FOREIGN KEY (AuthorId) REFERENCES Users(Id)
+  FOREIGN KEY (Author_id) REFERENCES Users(Id)
+);
+
+-- Demo Data
+INSERT INTO Users (Email, Name, Password) VALUES (
+  'martinlopezpablo@gmail.com', 'pablo', '123'
 );
 

@@ -1,6 +1,5 @@
 <?php
-
-UtilsController::loginRequired('home');
+UtilsController::GuestRequired('home');
 
 $usersCtrl = new UsersController('users', ['R']);
 
@@ -23,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'Name' => $user[0]['Name'],
             'Role_id' => $user[0]['Role_id']
         ];
+
+        UtilsController::redirect('home');
     } else {
         $status['errors'] = ['Datos erroneos'];
     }

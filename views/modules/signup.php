@@ -1,4 +1,6 @@
 <?php
+UtilsController::GuestRequired('home');
+
 $userCtrl = new UsersController('users', ['C', 'R']);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data = [];
