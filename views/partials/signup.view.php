@@ -1,3 +1,6 @@
+<?php
+$template = new TemplateController();
+?>
 <div class="col-lg-2"></div>
 
 <!-- Signup content  -->
@@ -7,7 +10,42 @@
   <h1>Sign up</h1>
 
   <!-- Login form -->
-  <form action="/blog/signup" method="post" class="signup-form">
+  <form action="" method="post" class="signup-form">
+
+
+    <?php
+    if (isset($status['errors'])) {
+    ?>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <?php
+          foreach ($status['errors'] as $key => $value) {
+          ?>
+            <li><?= $value ?></li>
+          <?php
+          }
+          ?>
+        </ul>
+      </div>
+    <?php
+    } elseif (isset($status['success'])) {
+    ?>
+      <div class="alert alert-success" role="alert">
+        <ul>
+          <?php
+          foreach ($status['success'] as $key => $value) {
+          ?>
+            <li><?= $value ?></li>
+          <?php
+          }
+          ?>
+        </ul>
+      </div>
+    <?php
+    }
+    ?>
+
+
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" id="username" name="username" class="form-control">
@@ -30,6 +68,7 @@
 
 
     <button type="submit" class="btn btn-primary">Sign up</button>
+    <p>Already have an account? <a href="<?= $template->baseUrl ?>login">Login Now</a></p>
   </form>
   <!-- /form -->
 </div>

@@ -25,7 +25,8 @@
       <?php
       $template = new TemplateController();
       $template->whitelist(
-        'singup'
+        'signup',
+        'login'
       );
       ?>
     </div>
@@ -35,7 +36,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright &copy; Your Website 2014</p>
+          <p>Copyright &copy; Pablo Martín López - Blog <?= date('Y') ?></p>
         </div>
         <!-- /.col-lg-12 -->
       </div>

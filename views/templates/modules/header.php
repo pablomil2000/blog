@@ -20,7 +20,7 @@
           <a href="login.html">Login</a>
         </li>
         <li>
-          <a href="signup.html">Sign up</a>
+          <a href="signup">Sign up</a>
         </li>
       </ul>
     </div>

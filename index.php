@@ -9,6 +9,10 @@ require_once './models/crud.model.php';
 
 require_once './controllers/crud.controller.php';
 
+// users
+require_once './controllers/users.controller.php';
+require_once './models/users.model.php';
+
 
 // var_dump($_GET);
 if (isset($_GET['url']) && str_starts_with($_GET['url'], 'api')) {
