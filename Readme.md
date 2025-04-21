@@ -18,9 +18,7 @@ Blog desarrollado integramente en php con control de acceso y gestion de usuario
 
 Puedes incluir aquí una o más imágenes del proyecto:
 
-```
 ![Captura de pantalla](./md/homePage.png)
-```
 
 ---
 
