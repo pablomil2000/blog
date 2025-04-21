@@ -1,22 +1,16 @@
-# 📁 Nombre del Proyecto
+# 📁 Blog
 
-Descripción breve del proyecto. Explica en una o dos frases qué hace tu aplicación y su propósito principal.
-
----
-
-## 🚀 Demo
-
-[🔗 Ver demo en línea](https://tudominio.com/proyecto) *(si aplica)*
+Blog desarrollado integramente en php con control de acceso y gestion de usuarios, roles y posts
 
 ---
 
 ## 🛠️ Tecnologías utilizadas
 
-- HTML5 / CSS3  
-- JavaScript  
-- Framework o Librería (React, Vue, Svelte, etc.)  
-- Backend (Node.js, PHP, etc.) *(si aplica)*  
-- Base de datos (MySQL, MongoDB, etc.) *(si aplica)*
+- HTML5 / CSS3
+- Javascript
+- Bootstrap 5
+- PHP
+- Base de datos MySQL
 
 ---
 
@@ -25,7 +19,7 @@ Descripción breve del proyecto. Explica en una o dos frases qué hace tu aplica
 Puedes incluir aquí una o más imágenes del proyecto:
 
 ```
-
+![Captura de pantalla](./md/homePage.png)
 ```
 
 ---
@@ -48,6 +42,8 @@ cd blog
 code .
 ```
 
+---
+
 ### 🧩 Roadmap
 
 - Listado de posts
@@ -60,3 +56,14 @@ code .
 - Gestión de categorías y etiquetas
 - Gestión de comentarios
 
+---
+
+### 📌 Notas
+
+---
+
+## 👨‍💻 Autor
+**Tu Nombre**  
+[🌐 Portfolio](https://pablo-martin-lopez.vercel.app/) · [🐱 GitHub](https://github.com/pablomil2000) · [💼 LinkedIn](https://linkedin.com/in/pablo-martin-lopez-17693717a)
+
+---
