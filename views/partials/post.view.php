@@ -7,6 +7,9 @@
 
     <!-- Author -->
     <p class="lead">
+        <?= $postCtrl->getCategory($post['Id']) ?>
+    </p>
+    <p class="lead">
         by <?= $postCtrl->getAuthor($post['Author_id']); ?>
     </p>
     <?php

@@ -28,6 +28,13 @@ CREATE TABLE IF NOT EXISTS Users (
   FOREIGN KEY (Role_id) REFERENCES Rols(Id)
 );
 
+CREATE TABLE IF NOT EXISTS Categories(
+  Id INT AUTO_INCREMENT,
+  Name VARCHAR(50),
+  Slug VARCHAR(50),
+  PRIMARY KEY (Id)
+);
+
 CREATE TABLE IF NOT EXISTS Posts (
   Id INT AUTO_INCREMENT,
   Name VARCHAR(100),
@@ -35,13 +42,18 @@ CREATE TABLE IF NOT EXISTS Posts (
   Creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   Publish_at DATETIME,
   Author_id INT,
+  Category_id INT,
   Content TEXT,
   Image VARCHAR(250),
   PRIMARY KEY (Id),
-  FOREIGN KEY (Author_id) REFERENCES Users(Id)
+  FOREIGN KEY (Author_id) REFERENCES Users(Id),
+  FOREIGN KEY (Category_id) REFERENCES Categories(id)
 );
 
 -- Demo Data
 INSERT INTO Users (Email, Name, Password, Role_id) VALUES (
   'martinlopezpablo@gmail.com', 'pablo', '123', 1
 );
+INSERT INTO categories(Name, Slug) VALUES(
+  'Category 1', 'Category-1'
+)

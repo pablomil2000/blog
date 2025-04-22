@@ -1,4 +1,7 @@
 <div class="col-md-12">
+  <?php
+  include_once('./views/partials/search.view.php');
+  ?>
   <!-- Third Blog Post -->
   <?php
   if ($posts != []) {
@@ -10,6 +13,9 @@
         </h2>
         <p class="lead">
           by <?= $post['Author_id'] ?>
+        </p>
+        <p class="lead">
+          <?= $postsCtrl->getCategory($post['Id']) ?>
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['Creation'] ?></p>
         <p><?= $post['Content'] ?></p>
@@ -29,14 +35,20 @@
   ?>
 
   <!-- Pager -->
-  <ul class="pager">
-    <li class="previous">
-      <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page - 1) ?>">Prev</a>
-    </li>
+  <?php
+  if ($pag) {
+  ?>
+    <ul class="pager">
+      <li class="previous">
+        <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page - 1) ?>">Prev</a>
+      </li>
 
-    <li class="next">
-      <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page + 1) ?>">Next</a>
-    </li>
-  </ul>
+      <li class="next">
+        <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page + 1) ?>">Next</a>
+      </li>
+    </ul>
+  <?php
+  }
+  ?>
 
 </div>

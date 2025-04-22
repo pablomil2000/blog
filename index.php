@@ -17,6 +17,10 @@ require_once './models/users.model.php';
 require_once './controllers/posts.controller.php';
 require_once './models/posts.model.php';
 
+// Category
+require_once './controllers/category.controller.php';
+require_once './models/category.model.php';
+
 
 // var_dump($_GET);
 if (isset($_GET['url']) && str_starts_with($_GET['url'], 'api')) {
