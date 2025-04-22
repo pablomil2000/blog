@@ -12,17 +12,25 @@
     <p class="lead">
         by <?= $postCtrl->getAuthor($post['Author_id']); ?>
     </p>
-    <?php
-    // var_dump($_SESSION);
-    if (isset($_SESSION['user'])) {
-        if ($_SESSION['user']['Role_id'] == 1 || ($_SESSION['user']['Role_id'] == 2 && $_SESSION['user']['id'] == $post['Author_id'])) {
-    ?>
-            <p><a href="#Editar">Editar</a></p>
-    <?php
-        }
-    }
-    ?>
+    <p>
+        <?php
+        // var_dump($_SESSION);
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['Role_id'] == 1 || ($_SESSION['user']['Role_id'] == 2 && $_SESSION['user']['id'] == $post['Author_id'])) {
+        ?>
+                <a href="<?= $template->baseUrl . 'post/' . $post['Slug'] ?>/edit">Editar</a>
+            <?php
+            }
 
+            if ($_SESSION['user']['Role_id'] == 1) {
+            ?>
+                <a href="<?= $template->baseUrl . 'post/' . $post['Slug'] ?>/delete">Delete</a>
+        <?php
+            }
+        }
+
+        ?>
+    </p>
 
     <hr>
 
