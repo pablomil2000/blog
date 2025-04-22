@@ -44,4 +44,3 @@ CREATE TABLE IF NOT EXISTS Posts (
 INSERT INTO Users (Email, Name, Password) VALUES (
   'martinlopezpablo@gmail.com', 'pablo', '123'
 );
-

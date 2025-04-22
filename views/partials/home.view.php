@@ -1,27 +1,32 @@
 <div class="col-md-12">
-
   <!-- Third Blog Post -->
-  <h2 class="post-title">
-    <a href="post.html">Blog Post Title</a>
-  </h2>
-  <p class="lead">
-    by Author
-  </p>
-  <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, voluptates, voluptas dolore ipsam
-    cumque quam veniam accusantium laudantium adipisci architecto itaque dicta aperiam maiores provident id
-    incidunt autem. Magni, ratione.</p>
-  <a class="btn btn-default" href="post.html">Read More</a>
+  <?php
 
-  <hr>
+  foreach ($posts as $key => $post) {
+  ?>
+    <div class="post">
+      <h2 class="post-title">
+        <a href="post.html"><?= $post['Name'] ?></a>
+      </h2>
+      <p class="lead">
+        by <?= $post['Author_id'] ?>
+      </p>
+      <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['Creation'] ?></p>
+      <p><?= $post['Content'] ?></p>
+      <a class="btn btn-default" href="post.html">Read More</a>
+    </div>
+  <?php
+  }
+  ?>
 
   <!-- Pager -->
   <ul class="pager">
     <li class="previous">
-      <a href="#">Prev</a>
+      <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page - 1) ?>">Prev</a>
     </li>
+
     <li class="next">
-      <a href="#">Next</a>
+      <a href="<?= $postsCtrl->getPaginationLink($template->baseUrl . 'home', $page + 1) ?>">Next</a>
     </li>
   </ul>
 

@@ -67,6 +67,7 @@ Table Posts
 | Colum | Use |
 |----- |----- |
 | Id | Primary key |
+| Name | Titulo de los post |
 | Creation |Fecha de creacion |
 | Publish_at |Fecha de publicacion |
 | Author_id |Clave externa Autor |

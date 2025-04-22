@@ -132,6 +132,12 @@ class CrudController
   // get pagination link
   public function getPaginationLink($direccion, $page)
   {
+    if ($page > $this->maxPage) {
+      $page = $this->maxPage;
+    }
+    if ($page <= 0) {
+      $page = 1;
+    }
     $link = $direccion . '/' . $page;
     return $link;
   }
