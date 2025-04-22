@@ -9,15 +9,15 @@
   ?>
       <div class="post">
         <h2 class="post-title">
-          <a href="post.html"><?= $post['Name'] ?></a>
+          <a href="<?= $template->baseUrl ?>post/<?= $post['Slug'] ?>"><?= $post['Name'] ?></a>
         </h2>
         <p class="lead">
           by <?= $post['Author_id'] ?>
         </p>
         <p class="lead">
-          <?= $postsCtrl->getCategory($post['Id']) ?>
+          <?= $postsCtrl->getCategory($post['Category_id']) ?>
         </p>
-        <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['Creation'] ?></p>
+        <p><span class="glyphicon glyphicon-time"></span> Posted on <?= UtilsController::formatDate($post['Creation'], 'd-M-y H:M') ?></p>
         <p><?= $post['Content'] ?></p>
         <a class="btn btn-primary" href="<?= $template->baseUrl ?>post/<?= $post['Slug'] ?>">Read More</a>
       </div>

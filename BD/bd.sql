@@ -57,3 +57,7 @@ INSERT INTO Users (Email, Name, Password, Role_id) VALUES (
 INSERT INTO categories(Name, Slug) VALUES(
   'Category 1', 'Category-1'
 )
+
+INSERT INTO Posts(Name, Slug, `Author_id`, `Content`, `Category_id`) VALUES(
+  'Post 1', 'Post-1', 1, "Hello world!", 1
+)

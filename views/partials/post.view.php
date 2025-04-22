@@ -7,10 +7,10 @@
 
     <!-- Author -->
     <p class="lead">
-        <?= $postCtrl->getCategory($post['Id']) ?>
+        <?= $postsCtrl->getCategory($post['Category_id']) ?>
     </p>
     <p class="lead">
-        by <?= $postCtrl->getAuthor($post['Author_id']); ?>
+        by <?= $postsCtrl->getAuthor($post['Author_id']); ?>
     </p>
     <p>
         <?php
@@ -35,7 +35,7 @@
     <hr>
 
     <!-- Date/Time -->
-    <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['Creation'] ?></p>
+    <p><span class="glyphicon glyphicon-time"></span> Posted on <?= UtilsController::formatDate($post['Creation'], 'd-M-y H:M') ?></p>
 
     <hr>
 

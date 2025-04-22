@@ -6,9 +6,9 @@ $categoryCtrl = new categoryCtrl('categories', ['C', 'R']);
 $categories = $categoryCtrl->index();
 
 if (isset($url[1]) && $url[1] != '') {
-    $postCtrl = new postsController('posts', ['R', 'U', 'D']);
+    $postsCtrl = new postsController('posts', ['R', 'U', 'D']);
 
-    $post = $postCtrl->search(['Slug' => $url[1]]);
+    $post = $postsCtrl->search(['Slug' => $url[1]]);
     if (!empty($post)) {
         $post = $post[0];
 
@@ -39,7 +39,7 @@ if (isset($url[1]) && $url[1] != '') {
                         $data['Category_id'] = $category_id;
 
                         // var_dump($post['Id'], $data);
-                        if ($postCtrl->update($post['Id'], $data)) {
+                        if ($postsCtrl->update($post['Id'], $data)) {
                             $status['success'] = ['Post actualizado'];
                             header('location: ' . $template->baseUrl . 'post/' . $data['Slug']);
                         } else {
@@ -52,7 +52,7 @@ if (isset($url[1]) && $url[1] != '') {
 
                 case 'delete':
 
-                    var_dump($postCtrl->delete(['id' => $post['Id']]));
+                    var_dump($postsCtrl->delete(['id' => $post['Id']]));
                     UtilsController::redirect($template->baseUrl . 'home'); // redirige a lista de posts
                     exit;
 
