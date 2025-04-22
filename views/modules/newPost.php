@@ -7,10 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $status = [];
 
     $data['Name'] = validatorController::validateString($_POST['subject']);
+    $data['Slug'] = UtilsController::getSlug(validatorController::validateString($_POST['subject']));
     $data['Content'] = $_POST['content'];
 
     $data['Author_id'] = $_SESSION['user']['Id'];
 
+    // var_dump($data);
     $resp = $postCtrl->create($data);
     // var_dump($resp);
 

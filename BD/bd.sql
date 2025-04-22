@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS Users (
 CREATE TABLE IF NOT EXISTS Posts (
   Id INT AUTO_INCREMENT,
   Name VARCHAR(100),
+  Slug VARCHAR(100),
   Creation DATETIME DEFAULT CURRENT_TIMESTAMP,
   Publish_at DATETIME,
   Author_id INT,
@@ -41,6 +42,6 @@ CREATE TABLE IF NOT EXISTS Posts (
 );
 
 -- Demo Data
-INSERT INTO Users (Email, Name, Password) VALUES (
-  'martinlopezpablo@gmail.com', 'pablo', '123'
+INSERT INTO Users (Email, Name, Password, Role_id) VALUES (
+  'martinlopezpablo@gmail.com', 'pablo', '123', 1
 );

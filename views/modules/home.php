@@ -1,7 +1,6 @@
 <?php
 $template = new TemplateController();
 
-
 if (isset($_GET['url'])) {
     $parametres = explode('/', $_GET['url']);
     if (isset($parametres[1])) {
@@ -19,8 +18,8 @@ $paginationConfig = [
     'page' => $page
 ];
 
-// var_dump($paginationConfig);
 
+// var_dump($paginationConfig);
 
 $postsCtrl = new postsController('posts', ['R'], $paginationConfig);
 $posts = $postsCtrl->getPaginated($page);

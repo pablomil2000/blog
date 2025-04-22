@@ -113,8 +113,11 @@ class CrudController
 
     // calculate the offset for the current page
     $skip = ($page - 1) * $this->xPage;
-
-    $rsl = $this->model::index($this->table, $skip, $this->xPage);
+    try {
+      $rsl = $this->model::index($this->table, $skip, $this->xPage);
+    } catch (Exception $e) {
+      return [];
+    }
     return $rsl;
   }
 
