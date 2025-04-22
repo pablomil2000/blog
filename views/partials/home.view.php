@@ -13,7 +13,7 @@
         </p>
         <p><span class="glyphicon glyphicon-time"></span> Posted on <?= $post['Creation'] ?></p>
         <p><?= $post['Content'] ?></p>
-        <a class="btn btn-default" href="post.html">Read More</a>
+        <a class="btn btn-default" href="<?= $template->baseUrl ?>post/<?= $post['Slug'] ?>">Read More</a>
       </div>
     <?php
     }

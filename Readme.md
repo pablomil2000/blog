@@ -68,6 +68,7 @@ Table Posts
 |----- |----- |
 | Id | Primary key |
 | Name | Titulo de los post |
+| Slug | Utilizado para la navegacion |
 | Creation |Fecha de creacion |
 | Publish_at |Fecha de publicacion |
 | Author_id |Clave externa Autor |
@@ -78,8 +79,6 @@ Table Posts
 
 ### 🧩 Roadmap
 
-- Listado de posts
-- Pagina de detalle del post
 - Sistema de categorias y etiquetas
 - Buscador de artículos
 - Comentarios

@@ -28,7 +28,8 @@
         'signup',
         'login',
         'logout',
-        'newPost'
+        'newPost',
+        'post'
       );
       ?>
     </div>
