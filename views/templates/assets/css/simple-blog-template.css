@@ -5,7 +5,8 @@
  */
 
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px;
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 footer {
@@ -13,9 +14,9 @@ footer {
 }
 
 @media (min-width: 1200px) {
-  .container {
-    width: 750px;
-  }
+    .container {
+        width: 750px;
+    }
 }
 
 /* navigation */
@@ -86,4 +87,10 @@ nav {
 
 .newpost textarea {
     max-width: 100%;
+}
+
+#search {
+    width: 80%;
+    height: 2.5em;
+    border-radius: 30px;
 }
