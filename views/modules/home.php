@@ -1,7 +1,15 @@
 <?php
 $template = new TemplateController();
-
+$categoriesCtrl = new categoryCtrl('categories', ['R']);
+$categories = $categoriesCtrl->index();
 $pag = true;
+
+$data = [];
+if (isset($_GET['cat'])) {
+    $category = $categoriesCtrl->search(['Slug' => $_GET['cat']]);
+
+    $data = ['Category_id' => $category[0]['Id']];
+}
 
 if (isset($_GET['url'])) {
     $parametres = explode('/', $_GET['url']);
@@ -21,9 +29,13 @@ $paginationConfig = [
 ];
 
 $postsCtrl = new postsController('posts', ['R'], $paginationConfig);
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $search = validatorController::validateString($_POST['search']);
-    $posts = $postsCtrl->search(['Name' => '%' . $search . '%']);
+if ($data != [] || $_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $search = validatorController::validateString($_POST['search']);
+        $data['Name'] = '%' . $search . '%';
+    }
+    // var_dump($data);
+    $posts = $postsCtrl->search($data);
     $pag = false;
 } else {
     $posts = $postsCtrl->getPaginated($page);
